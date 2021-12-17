@@ -1,0 +1,22 @@
+Requisitos para rodar o ProtTech:
+
+(1)Ter o Python na versão 3.9 ou superior.
+
+(2)Ter o pyinstaller instalado na máquina.
+
+(3)Colocar a pasta "ProtTech" no disco local C
+
+
+1. Para instalar o python, basta ir no site https://www.python.org/downloads/ e baixar o arquivo para windows.
+
+2. Como o arquivo ainda não pode ser exportado como executável, é preciso baixar o pyinstaller.
+2.1. Para isso, basta abrir o cmd e digitar o seguinte comando: pip install pyinstaller.
+2.2. Depois, navegue pelo cmd até a pasta ProtTech no disco C e digite este último comando: pyinstaller ProtTech.py
+
+3.Caso o arquivo não esteja colocado no disco C, o jogo não funcionará, por isso que a pasta deve estar em C:\
+
+***Para não ter que acessar toda vez diretamente pelo disco C o arquivo ProtTech.py, é possível criar um atalho dessse arquivo e colocá-lo em outra pasta, como na área de trabalho.
+
+
+
+Qualquer dúvida, fale com o elaborador pelo e-mail: falx777@gmail.com

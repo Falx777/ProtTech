@@ -1,0 +1,3 @@
+False;
+Score=0;
+FasesWone=True,False,False,False,False,False,False;
