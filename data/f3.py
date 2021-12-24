@@ -21,8 +21,8 @@ class Fases3():
 
 class FaseThreeWorldOne(Fases3):
     def __init__(self, game):
-        self.i = 100
-        self.layers = [100]
+        self.i = 1
+        self.layers = [1]
         self.not_fading = True
         self.wrong, self.wright = False, False
         self.score = Score()
