@@ -21,8 +21,8 @@ class Fases6():
 
 class FaseSixWorldOne(Fases6):
     def __init__(self, game):
-        self.i = 44
-        self.layers = [44]
+        self.i = 1
+        self.layers = [1]
         self.not_fading = True
         self.wrong, self.wright = False, False
         self.score = Score()
@@ -168,7 +168,7 @@ class FaseSixWorldOne(Fases6):
                         if self.wrong:
                             pygame.mixer.Channel(1).play(pygame.mixer.Sound('data/aud/wrong_answer.mp3'))
                             pygame.mixer.Channel(1).set_volume(0.04)"""
-            if not self.gamimg_layer and self.layers[len(self.layers) - 1] == 93:
+            if not self.gamimg_layer and self.layers[len(self.layers) - 1] == 90:
                 self.game.current_menu = self.game.fases_1
                 self.run_display = False
                 self.gaming_layer = False
@@ -654,213 +654,236 @@ class FaseSixWorldOne(Fases6):
             self.game.draw_text("processador, delicadamente, utilizando uma haste de algodão, ou ", 19, x_text, self.y_text + 60)
             self.game.draw_text("deixá-la do jeito que está para a próxima etapa.", 19, x_text, self.y_text + 80)
         if layer == 48:
-            #PAREI AQUI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            pass
+            #FAZER JOGO
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            self.game.draw_text("Nessa parte, o cooler deve ser posto em cima do processador com a ", 19, 250, self.y_text)
+            self.game.draw_text("pasta térmica a fim de pressioná-la, pois quanto maior o contato,", 19, 250, self.y_text + 20)
+            self.game.draw_text("melhor a condutividade.", 19, 250, self.y_text + 40)
         if layer == 49:
-            self.draw_very_good()
-        if layer == 50:
-            #FAZER JOGO
-            pass
-        if layer == 51:
-            self.draw_very_good()
-        if layer == 52:
-            #FAZER JOGO
-            pass
-        if layer == 53:
-            self.draw_very_good()
-        if layer == 54:
-            #FAZER JOGO
-            pass
-        if layer == 55:
-            self.draw_very_good()
-        if layer == 56:
-            #FAZER JOGO
-            pass
-        if layer == 57:
-            self.draw_very_good()
-        if layer == 58:
-            #COLOCAR IMAGEM
-            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
-            self.base_layer(layer)
-            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Agora vamos falar sobre o gabinete.", 19, x_text, self.y_text)
-            self.game.draw_text("O gabinete é a “carcaça” do computador, onde são colocados os componentes ", 19, x_text,self.y_text + 20)
-            self.game.draw_text("internos (não periféricos). Muitas vezes alguns leigos chamam o gabinete de ", 19, x_text,self.y_text + 40)
-            self.game.draw_text("CPU, mas já vimos que CPU é Unidade Central de Processamento, o processador.", 19, x_text,self.y_text + 60)
-        if layer == 59:
-            #COLOCAR IMAGEM
-            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
-            self.base_layer(layer)
-            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("O gabinete possui uma divisão de lados. O lado da frente geralmente possui ", 19, x_text, self.y_text)
-            self.game.draw_text("conectores de áudio e USB, além do botão de ligar/desligar. Já o lado de trás ", 19, x_text,self.y_text + 20)
-            self.game.draw_text("possui o “espelho” onde estão os conectores de força, rede e de periféricos, ", 19, x_text,self.y_text + 40)
-            self.game.draw_text("além de espaços para conexão de novos espelhos de hardwares ligados à conexão", 19, x_text,self.y_text + 60)
-            self.game.draw_text("PCI-Express, por exemplo.", 19, x_text,self.y_text + 80)
-        if layer == 60:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("A construção mais comum para os gabinetes é de aço eletro galvanizado, ", 19, x_text, self.y_text)
-            self.game.draw_text("alumínio e plástico.", 19, x_text,self.y_text + 20)
-            self.game.draw_text("A placa-mãe é instalada na lateral do gabinete por meio de parafusos. A ", 19, x_text,self.y_text + 40)
-            self.game.draw_text("fonte é instalada na parte de trás do gabinete, geralmente na parte de cima.", 19, x_text,self.y_text + 60)
+            self.game.draw_text("Contudo, a pressão será feita com o encaixe dos pinos ou com os  ", 19, x_text, self.y_text)
+            self.game.draw_text("parafusos do cooler enroscados na placa-mãe. Se o cooler for ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("pressionado antes, pode escorregar com a pasta e danificar a ", 19, x_text, self.y_text + 40)
+            self.game.draw_text("placa-mãe. Pronto! Já está colocado", 19, x_text, self.y_text + 60)
+        if layer == 50:
+             #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
+            self.game.draw_text("Agora, para trocar a pasta térmica, algumas etapas são adicionadas: ", 19, x_text, self.y_text)
+            self.game.draw_text("primeiro, se a placa-mãe já estiver dentro do gabinete, deve-se deitá-lo ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("para realizar essa operação.", 19, x_text, self.y_text + 40)
+        if layer == 51:
+             #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
+            self.game.draw_text("Depois, deve-se retirar o cooler da placa-mãe. Com o cooler retirado, ", 19, 250, self.y_text)
+            self.game.draw_text("deve-se limpar a pasta térmica presente no cooler e no processador, ", 19, 250, self.y_text + 20)
+            self.game.draw_text("que provavelmente estará dura e seca.", 19, 250, self.y_text + 40)
+        if layer == 52:
+             #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
+            self.game.draw_text("Nessas partes não é recomendado utilizar nenhum líquido. Para tirar ", 19, x_text, self.y_text)
+            self.game.draw_text("o excesso da pasta térmica anterior pode-se utilizar um papel com ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("textura não tão dura, como o de um guardanapo ou papel higiênico.", 19, x_text, self.y_text + 40)
+            self.game.draw_text("Também pode-se utilizar um pano, mas será mais difícil de limpá-lo depois.", 19, x_text, self.y_text + 60)
+        if layer == 53:
+             #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
+            self.game.draw_text("Para limpar a pasta térmica do processador da melhor maneira,", 19, x_text, self.y_text)
+            self.game.draw_text("é preciso retirá-lo da placa-mãe. O processo de limpeza é o ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("mesmo do cooler.", 19, x_text, self.y_text + 40)
+        if layer == 54:
+             #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            self.game.draw_text("Depois, basta realizar os mesmos passos da colocação da pasta ", 19, 250, self.y_text)
+            self.game.draw_text("térmica, vistos agora a pouco.", 19, 250, self.y_text + 20)
+            self.game.draw_text("Vamos testar seus conhecimentos adquiridos...", 19, 250, self.y_text + 40)
+        if layer == 55:
+            #FAZER JOGO
+            pass
+        if layer == 56:
+            self.draw_very_good()
+        if layer == 57:
+            #FAZER JOGO
+            pass
+        if layer == 58:
+            self.draw_very_good()
+        if layer == 59:
+            #FAZER JOGO
+            pass
+        if layer == 60:
+            self.draw_very_good()
         if layer == 61:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Os fans são fixados na parte traseira do gabinete a fim de ", 19, x_text, self.y_text)
-            self.game.draw_text("facilitar a dissipação de calor por convecção e os dispositivos ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("de armazenamento (HDs e SSDs) são alocados em um compartimento ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("inferior ou na frente do gabinete chamado. Esses compartimentos ", 19, x_text, self.y_text + 60)
-            self.game.draw_text("são chamados de baias.", 19, x_text, self.y_text + 80)
-            self.game.draw_text("Vamos ver como instalar a placa-mãe no gabinete.", 19, x_text, self.y_text + 100)
+            self.game.draw_text("Agora vamos ver outra parte da manutenção preventiva. A segurança.", 19, x_text, self.y_text)
+            self.game.draw_text("Uma das seguranças que se deve ter ao utilizar o computador é a", 19, x_text, self.y_text + 20)
+            self.game.draw_text("respeito da fonte de energia. Não da fonte presente no computador", 19, x_text, self.y_text + 40)
+            self.game.draw_text("mas da energia da tomada que é ligada à ela.", 19, x_text, self.y_text + 60)
         if layer == 62:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Primeiro, selecione o espelho da placa-mãe e coloque-o na parte traseira do ", 19, x_text, self.y_text)
-            self.game.draw_text("gabinete. Geralmente o espelho deve ficar com o sentido dos conectores de ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("áudio próximos à fonte, ou no sentido próximo a parte de baixo do gabinete.", 19, x_text, self.y_text + 40)
+            self.game.draw_text("Essa energia ligada diretamente no computador pode possuir variações,  ", 19, x_text, self.y_text)
+            self.game.draw_text("principalmente em períodos de tempestades ou manutenções na rede elétrica, ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("sem contar na variação mais comum, chegando até 10% do valor estimado de ", 19, x_text, self.y_text + 40)
+            self.game.draw_text("de diferença de potencial. Tudo isso agrava a vida útil da máquina.", 19, x_text, self.y_text + 60)
         if layer == 63:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Para colocar o espelho, com o espelho em mãos na parte de dentro ", 19, x_text, self.y_text)
-            self.game.draw_text("do gabinete, empurre o espelho no local adequado para o sentido de ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("fora do gabinete.", 19, x_text, self.y_text + 40)
+            self.game.draw_text("Mas não apenas problemas a longo prazo podem acontecer, como a ", 19, x_text, self.y_text)
+            self.game.draw_text("curto prazo também. Um computador desligando por causa de uma ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("queda de energia ou um pico pode gerar diversos problemas, como ", 19, x_text, self.y_text + 40)
+            self.game.draw_text("perda de arquivos ou danificação de dispositivos de armazenamento.", 19, x_text, self.y_text + 60)
         if layer == 64:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Depois, você deve se atentar aos parafusos para serem colocados entre a ", 19, x_text, self.y_text)
-            self.game.draw_text("placa-mãe e o gabinete, chamados de stand-offs. Eles são necessários, ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("pois o contato direto da parte metálica do gabinete com a placa-mãe ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("pode gerar problemas de curto circuito.", 19, x_text, self.y_text + 60)
+            self.game.draw_text("Então, para diminuir as chances de problemas causados pelo próprio ", 19, x_text, self.y_text)
+            self.game.draw_text("fornecimento de energia, podem ser instalados dispositivos que fazem ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("o papel intermediário entre a rede elétrica e o computador.", 19, x_text, self.y_text + 40)
+            self.game.draw_text("São eles: Estabilizador, filtro de linha e No Break.", 19, x_text, self.y_text + 60)
         if layer == 65:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Para saber onde colocar os stand-offs, veja no manual da placa-mãe e ", 19, x_text, self.y_text)
-            self.game.draw_text("do gabinete.", 19, x_text, self.y_text + 20)
-            self.game.draw_text("Geralmente, para as placas-mãe no padrão de fonte ATX e micro-ATX, os ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("locais dos stand-offs são representados por letras (como AM).", 19, x_text, self.y_text + 60)
-            self.game.draw_text("Depois de encontrar os locais adequados para os stand-offs, coloque-", 19, x_text, self.y_text + 80)
-            self.game.draw_text("-os com uma chave de fenda.", 19, x_text, self.y_text + 100)
+            self.game.draw_text("Tanto o estabilizador quanto filtro de linha fornece alguma segurança, ", 19, x_text, self.y_text)
+            self.game.draw_text("como a proteção por oscilações e proteção contra interferências", 19, x_text, self.y_text + 20)
+            self.game.draw_text("eletromagnéticas e surtos de tensão, porém, atualmente, não são mais ", 19, x_text, self.y_text + 40)
+            self.game.draw_text("tão necessários. ", 19, x_text, self.y_text + 60)
+            self.game.draw_text("  ", 19, x_text, self.y_text + 80)
+            self.game.draw_text("", 19, x_text, self.y_text + 100)
         if layer == 66:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
-            self.game.draw_text("Agora, com a placa-mãe em mãos, coloque-a dentro do gabinete. Use  ", 19,250, self.y_text)
-            self.game.draw_text("os conectores de áudio como referenciais para o encaixe com o ", 19,250, self.y_text + 20)
-            self.game.draw_text("espelho da placa-mãe e encaixe a placa-mãe no espelho.", 19,250, self.y_text + 40)
-            self.game.draw_text("Com a placa-mãe encaixada no espelho, parafuse a placa-mãe no ", 19,250, self.y_text + 60)
-            self.game.draw_text("gabinete com os parafusos que vieram com ela.", 19,250, self.y_text + 80)
-            self.game.draw_text("Vamos testar seus conhecimentos adquiridos...", 19,250, self.y_text + 100)
+            self.game.draw_text("Isso ocorre por causa do melhoramento das fontes de computadores e,", 19,250, self.y_text)
+            self.game.draw_text("além disso, muitos estabilizadores e filtros de linha impedem o ", 19,250, self.y_text + 20)
+            self.game.draw_text("funcionamento de alguns computadores atuais, além de pararem de ", 19,250, self.y_text + 40)
+            self.game.draw_text("funcionar na primeira “proteção” de energia.", 19,250, self.y_text + 60)
         if layer == 67:
-            #FAZER JOGO
-            pass
+             #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            self.game.draw_text("Então o melhor dispositivo presente no mercado é o No Break, também ", 19,250, self.y_text)
+            self.game.draw_text("chamado de UPS. Ele funciona como um amálgama das melhores características ", 19,250, self.y_text + 20)
+            self.game.draw_text("do filtro de linha e do estabilizador, mas com alguns adicionais.", 19,250, self.y_text + 40)
+            self.game.draw_text("estabilizador, mas com alguns adicionais. Ele fornece proteção contra ", 19,250, self.y_text + 60)
+            self.game.draw_text("surtos e quedas de tensão, proteção contra queda na energia de todo o ", 19,250, self.y_text + 80)
+            self.game.draw_text("local, pois possui uma bateria interna, e proteção contra oscilação da frequência.", 19,250, self.y_text + 100)
         if layer == 68:
-            self.draw_very_good()
-        if layer == 69:
-            #FAZER JOGO
-            pass
-        if layer == 70:
-            self.draw_very_good()
-        if layer == 71:
             #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
-            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Vamos ver agora outra parte importante, os cabos do gabinete.", 19, x_text, self.y_text)
-            self.game.draw_text("Esses cabos já vem no gabinete servem para ligar o botão liga/", 19, x_text, self.y_text + 20)
-            self.game.draw_text("desliga, os conectores de som, usb e os leds do gabinete na placa-mãe.", 19, x_text,self.y_text + 40)
-            self.game.draw_text("Os cabos mais comuns nos computadores mais recentes são: cabo USB 3.0 ", 19, x_text,self.y_text + 60)
-            self.game.draw_text("(alguns possuem tanto o 3.0 quanto o 2.0), cabo HD data/audio, cabo power ", 19, x_text,self.y_text + 80)
-            self.game.draw_text("sw, cabo led sw, cabo reset sw e HD led.", 19, x_text,self.y_text + 100)
+            self.game.draw_text("Quando há uma falta de energia, o no break consegue fornecer, em média,", 19,250, self.y_text)
+            self.game.draw_text("15 minutos de energia, dependendo da bateria interna.", 19,250, self.y_text + 20)
+            self.game.draw_text("Isso dá tempo suficiente para desligar o computador corretamente,", 19,250, self.y_text + 40)
+            self.game.draw_text("sem perder arquivos.", 19,250, self.y_text + 60)
+        if layer == 69:
+            #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            self.game.draw_text("Ele não serve apenas para conectar a fonte do computador, mas também ", 19,250, self.y_text)
+            self.game.draw_text("o monitor. O número de entradas de tomadas também varia para cada ", 19,250, self.y_text + 20)
+            self.game.draw_text("dispositivo e sua instalação consiste em conectar os cabos da fonte ", 19,250, self.y_text + 40)
+            self.game.draw_text("e do monitor nele e o seu cabo na tomada, depois ligá-lo.", 19,250, self.y_text + 60)
+            self.game.draw_text("Vamos testar seus conhecimentos adquiridos.", 19,250, self.y_text + 80)
+        if layer == 70:
+            #fazer jogo
+            pass
+        if layer == 71:
+            self.draw_very_good()
         if layer == 72:
             #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
-            self.game.draw_text("O cabo USB 3.0, como o próprio nome já diz, serve para habilitar as ", 19, 255, self.y_text)
-            self.game.draw_text("portas USB do gabinete. Ele possui 19 entradas (20 entradas -1 no ", 19, 255, self.y_text + 20)
-            self.game.draw_text("final). Para encontrá-lo na placa-mãe, leia o manual ou, se houver, procure ", 19, 150,self.y_text + 40)
-            self.game.draw_text("pelo conector de nome USB3 na placa-mãe. Basta colocar no sentido em que o  ", 19, 150,self.y_text + 60)
-            self.game.draw_text("pino faltante se encontre com o espaço em todo o conector e empurrar o", 19, 150,self.y_text + 80)
-            self.game.draw_text("cabo no sentido da parte de trás da placa.", 19, 150,self.y_text + 100)
+            self.game.draw_text("Uma última prática da manutenção preventiva de segurança é a realização de ", 19, 255, self.y_text)
+            self.game.draw_text("backup e instalação de softwares de proteção.", 19, 255, self.y_text + 20)
+            self.game.draw_text("O backup é uma das formas de segurança para os dados presentes no computador. ", 19, 150,self.y_text + 40)
+            self.game.draw_text("Ele é um processo de cópia de segurança dos arquivos presentes no dispositivo ", 19, 150,self.y_text + 60)
+            self.game.draw_text("de armazenamento.", 19, 150,self.y_text + 80)
         if layer == 73:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("O conector de áudio, como o próprio nome já diz, serve para habilitar as portas de ", 19, x_text, self.y_text)
-            self.game.draw_text("áudio do gabinete. Ele possui 9 entradas (10 entradas -1 próxima ao final). Para ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("encontrá-lo na placa-mãe, leia o manual ou, se houver, procure pelo conector de ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("nome AAFP ou HD data/audio na placa-mãe. O método de encaixe é o mesmo do USB 3.0.", 19, x_text, self.y_text + 60)
+            self.game.draw_text("Realizar backup é muito importante, pois, mesmo tendo o melhor hardware do momento, ", 19, x_text, self.y_text)
+            self.game.draw_text("ainda assim os dispositivos não são infalíveis. Além disso, alguns possuem mecanismos", 19, x_text, self.y_text + 20)
+            self.game.draw_text("de recuperação, outros não (como é o caso do SSD caso  haja um problema físico)", 19, x_text, self.y_text + 40)
+            self.game.draw_text("Existem dois tipos de backups: os de mídia físicos e os na nuvem.", 19, x_text, self.y_text + 40)
         if layer == 74:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("O conector power sw serve para habilitar o botão de ligar e desligar do gabinete. ", 19, x_text, self.y_text)
-            self.game.draw_text("Ele faz parte da conexão da placa-mãe chamada painel. Para nos guiarmos durante ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("a instalação desse conector e dos outros (que também fazem parte do painel), ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("vamos dividir apenas nas partes importantes dele que, nessa placa-mãe escolhida,", 19, x_text, self.y_text + 60)
-            self.game.draw_text("são os últimos 5 pares de pinos com a sequência de 4 pares de pinos mais  ", 19, x_text, self.y_text + 80)
-            self.game.draw_text("ao extremo, seguidos de 1 pino.", 19, x_text, self.y_text + 100)
+            self.game.draw_text("Os de mídia física são feitos com a cópia dos arquivos de um dispositivo de", 19, x_text, self.y_text)
+            self.game.draw_text("armazenamento para o outro (de um HD para outro ou SSD), ou no mesmo o dispositivo.", 19, x_text, self.y_text + 20)
+            self.game.draw_text("Para isso, existem HDs e SSDs externos, capazes de armazenar grandes quantidades ", 19, x_text, self.y_text + 40)
+            self.game.draw_text("de arquivos e são fáceis de instalar, pois utilizam geralmente a porta USB, podendo ", 19, x_text, self.y_text + 60)
+            self.game.draw_text("ser conectados diretamente no exterior do gabinete.", 19, x_text, self.y_text + 80)
         if layer == 75:
             #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
-            self.game.draw_text("Depois de encontrar o painel, os pinos onde se deve conectar o ", 19, 250, self.y_text)
-            self.game.draw_text("cabo power sw devem ser vistos no manual da placa-mãe ou, se ", 19, 250, self.y_text + 20)
-            self.game.draw_text("houver, procure na legenda do painel o nome “pwr_sw”. Na legenda ", 19, 250, self.y_text + 40)
-            self.game.draw_text("e no manual haverá também o sentido de negativo e positivo do ", 19, 250, self.y_text + 60)
-            self.game.draw_text("cabo para ser conectado.", 19, 250, self.y_text + 80)
+            self.game.draw_text("No caso dos backups no mesmo dispositivo, estão sujeitos a perdas ", 19, 250, self.y_text)
+            self.game.draw_text("caso o dispositivo tenha falha, porém, a cópia interna traz mais ", 19, 250, self.y_text + 20)
+            self.game.draw_text("praticidade para o usuário caso queira acessá-la rapidamente.", 19, 250, self.y_text + 40)
         if layer == 76:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Depois de encontrar o par de encaixe e o sentido dos pólos para ", 19, x_text, self.y_text)
-            self.game.draw_text("serem conectados, coloque o cabo no mesmo método dos outros colocados.", 19, x_text, self.y_text + 20)
+            self.game.draw_text("O backup na nuvem consiste na cópia de arquivos para um sistema de", 19, x_text, self.y_text)
+            self.game.draw_text("armazenamento online. Geralmente esses sistemas são pagos para  ", 19, x_text, self.y_text + 20)
+            self.game.draw_text("grandes capacidades, mas existem versões gratuitas para tamanhos ", 19, x_text, self.y_text + 40)
+            self.game.draw_text("menores. Atualmente, são os mais utilizados, principalmente por ", 19, x_text, self.y_text + 60)
+            self.game.draw_text("causa da praticidade.", 19, x_text, self.y_text + 80)
         if layer == 77:
              #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("O conector reset sw serve para habilitar a algumas funções distintas do ", 19, x_text, self.y_text)
-            self.game.draw_text("gabinete, como desligamento forçado, controle de velocidade dos fans e ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("cor dos leds, caso haja no gabinete. Para conectá-lo, mais uma vez, leia", 19, x_text, self.y_text + 40)
-            self.game.draw_text("o manual para encontrar o local correto, ou, se for uma conexão padrão, ", 19, x_text, self.y_text + 60)
-            self.game.draw_text("coloque-o abaixo e em paralelo ao conector power sw, mas no mesmo sentido ", 19, x_text, self.y_text + 80)
-            self.game.draw_text("dos pólos.", 19, x_text, self.y_text + 100)
+            self.game.draw_text("Como comparação, para acessar um backup em uma mídia física, é preciso ", 19, x_text, self.y_text)
+            self.game.draw_text("instalá-la em um dispositivo que possua uma conexão adequada. Já os", 19, x_text, self.y_text + 20)
+            self.game.draw_text("backups da nuvem podem ser acessados em qualquer dispositivo com acesso", 19, x_text, self.y_text + 40)
+            self.game.draw_text("à internet, desde que o usuário contenha as devidas credenciais do ", 19, x_text, self.y_text + 60)
+            self.game.draw_text("serviço de armazenamento adquirido.", 19, x_text, self.y_text + 80)
         if layer == 78:
               #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
-            self.game.draw_text("Os conectores power led servem para identificar a intensidade  ", 19, 255, self.y_text)
-            self.game.draw_text("máxima e mínima dos leds no gabinete. Para conectá-los, mais uma ", 19, 255, self.y_text + 20)
-            self.game.draw_text("vez, leia no manual da placa-mãe, mas o caso padrão é ao lado do", 19, 255, self.y_text + 40)
-            self.game.draw_text("conector power sw, próximo ao fim da linha de cima dos pares de ", 19, 255, self.y_text + 60)
-            self.game.draw_text("pinos, no mesmo sentido dos pólos do power sw, com o cabo  ", 19, 255, self.y_text + 80)
-            self.game.draw_text("power led + no pólo positivo e o power led - no polo negativo.", 19, 255, self.y_text + 100)
+            self.game.draw_text("Os backups ainda possuem níveis de arquivos, podendo ser feita a ", 19, 255, self.y_text)
+            self.game.draw_text("cópia apenas de arquivos de mídia audiovisual e documentos, como ", 19, 255, self.y_text + 20)
+            self.game.draw_text("também modificações feitas, ou até todo o sistema. Este é chamado ", 19, 255, self.y_text + 40)
+            self.game.draw_text("de backup completo, muito utilizado em empresas e em migrações", 19, 255, self.y_text + 60)
+            self.game.draw_text("de SOs de HDs para SSDs.", 19, 255, self.y_text + 80)
         if layer == 79:
               #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("O último cabo a ser conectado é o HD LED. Ele serve para identificar se o disco  ", 19, x_text, self.y_text)
-            self.game.draw_text("rígido está instalado corretamente. Para conectá-lo, pela última vez, veja no  ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("manual da placa-mãe, mas no caso convencional, ele deve ser colocado abaixo dos ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("conectores power leds, no mesmo sentido dos pólos do power sw.", 19, x_text, self.y_text + 60)
-            self.game.draw_text("Vamos testar seus conhecimentos adquiridos...", 19, x_text, self.y_text + 80)
+            self.game.draw_text("Lembre-se de que se um hardware quebrar ou parar de funcionar, pode ser", 19, x_text, self.y_text)
+            self.game.draw_text("substituído. Mas se um arquivo de documento, áudio ou vídeo for perdido,", 19, x_text, self.y_text + 20)
+            self.game.draw_text(" não há como recuperá-lo.", 19, x_text, self.y_text + 40)
+            self.game.draw_text("Vamos testar seus conhecimentos adquiridos...", 19, x_text, self.y_text + 60)
         if layer == 80:
             #FAZER JOGO
             pass
@@ -882,44 +905,31 @@ class FaseSixWorldOne(Fases6):
         if layer == 84:
             self.draw_very_good()
         if layer == 85:
-            #COLOCAR IMAGEM
-            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
-            self.base_layer(layer)
-            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Agora você vai ver como instalar o HD/SSD SATA no gabinete.", 19, x_text, self.y_text)
-            self.game.draw_text("Procure o compartimento do gabinete onde estão as baias e, caso ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("sejam removíveis, remova-as e encaixe o HD no sentido correto. Depois", 19, x_text, self.y_text + 40)
-            self.game.draw_text("parafuse o HD nas baias pelos lados.", 19, x_text, self.y_text + 60)
+            #FAZER JOGO
+            pass
         if layer == 86:
-            #COLOCAR IMAGEM
-            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
-            self.base_layer(layer)
-            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Caso as baias não sejam facilmente removíveis, apenas encaixe o HD e ", 19, x_text, self.y_text)
-            self.game.draw_text("parafuse as laterais dele nas baias.", 19, x_text, self.y_text + 20)
-            self.game.draw_text("Por último, quando tudo estiver instalado, feche o compartimento do ", 19, x_text, self.y_text + 40)
-            self.game.draw_text("gabinete (em alguns casos, ele é fechado por pressão, em outros, ", 19, x_text, self.y_text + 60)
-            self.game.draw_text("como uma porta) e ligue o PC para testar.", 19, x_text, self.y_text + 80)
-            self.game.draw_text("Vamos testar seus conhecimentos adquiridos...", 19, x_text, self.y_text + 100)
+            self.draw_very_good()
         if layer == 87:
-            #FAZER QUESTÃO  
-            pass
-        if layer == 88:
-            self.draw_very_good()
-        if layer == 89:
-            #FAZER QUESTÃO  
-            pass
-        if layer == 90:
-            self.draw_very_good()
-        if layer == 91:
             #COLOCAR IMAGEM
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
             self.base_layer(layer)
             x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
-            self.game.draw_text("Ufa! Você terminou a fase 5. Agora, depois de aprender um pouco ", 19, x_text, self.y_text)
-            self.game.draw_text("sobre o funcionamento das partes de um computador, está na hora ", 19, x_text, self.y_text + 20)
-            self.game.draw_text("de aprender sobre a manutenção e segurança dessas partes.", 19, x_text, self.y_text + 40)
-        if layer == 92:
+            self.game.draw_text("Enfim, a última prática de manutenção preventiva. A proteção do ", 19, x_text, self.y_text)
+            self.game.draw_text("sistema. Uma das formas para uma pessoa leiga em informática", 19, x_text, self.y_text + 20)
+            self.game.draw_text("reduzir as chances de um reparo ou aumentar os intervalos de", 19, x_text, self.y_text + 40)
+            self.game.draw_text("manutenção preventiva é o uso de softwares de segurança, como os ", 19, x_text, self.y_text + 60)
+            self.game.draw_text("antivírus e programas de limpeza de arquivos temporários e ", 19, x_text, self.y_text + 80)
+            self.game.draw_text("desnecessários.", 19, x_text, self.y_text + 100)
+        if layer == 88:
+            #COLOCAR IMAGEM
+            self.game.display.blit(pygame.image.load('data/img/worlds/w1/s2/fundo_mb.png'), (215, 17))
+            self.base_layer(layer)
+            x_text = self.margin_left if self.margin_reg == "left" else self.margin_right
+            self.game.draw_text("Além disso, também é importante sempre atualizar os softwares,", 19, x_text, self.y_text)
+            self.game.draw_text("sejam as atualizações do SO, framework ou programas.", 19, x_text, self.y_text + 20)
+            self.game.draw_text("Enfim, você terminou a fase 6. Na próxima fase você verá um", 19, x_text, self.y_text + 40)
+            self.game.draw_text("pouco sobre manutenção corretiva.", 19, x_text, self.y_text + 60)
+        if layer == 89:
             self.game.display.blit(pygame.image.load('data/img/worlds/w1/s5/end.png'), (0, 0))
             text = 'FasesWone='
             a = open('c:\ProtTech\data\data.txt', 'r')
@@ -933,6 +943,7 @@ class FaseSixWorldOne(Fases6):
                 a.write(b)
                 a.close()
             pygame.display.update()
+            
 
 
     def current_layer(self):
